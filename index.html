@@ -1,15 +1,106 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    <link rel="stylesheet" href="./css/bootstrap-grid.min.css"/>
+    <link rel="stylesheet" href="./css/bootstrap.min.css" />
+    <style>
+        .row {
+            padding: 2px
+        }
+        footer {
+            /* 設定footer的高度 */
+            height: 60px;
+            box-sizing: border-box;
+            /* 設定footer絕對位置在底部 */
+            position: absolute;
+            bottom: 0;
+            /* 展開footer寬度 */
+            width: 100%;
+        }
+    </style>
 </head>
-<body>
+
+<body style="background-color: #a9a9a9">
+    <nav class="navbar navbar-light bg-light">
+        <a class="navbar-brand" href="#">
+            <img src="./icon/price.png" width="30" height="30"
+                class="d-inline-block align-top" alt="">
+                本息平均攤還法試算
+        </a>
+    </nav>
+    <div class="container">
+        <div class="row">
+            <div class="col"></div>
+        </div>
+        <form id="contactForm">
+            <div class="form-group row">
+                <label for="years" class="col-md-3 col-form-label ">貸款年數</label>
+                <div class="input-group col-md-9 ">
+                    <input type="number" min="0" step="1" class="form-control shadow-lg" id="years"
+                        placeholder="請輸入您貸款的總年數" required>
+                    <div class="input-group-append">
+                        <span class="input-group-text">年</span>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="cash" class="col-md-3 col-form-label">每月應繳本息</label>
+                <div class="input-group col-md-9">
+                    <input type="number" min="0" step="1" class="form-control shadow-lg" id="cash"
+                        placeholder="請輸入您希望每月繳交的本息" required>
+                    <div class="input-group-append">
+                        <span class="input-group-text">元</span>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="rate" class="col-md-3 col-form-label">年利率</label>
+                <div class="input-group col-md-9">
+                    <input type="number" min="0" step="0.01" class="form-control shadow-lg" id="rate"
+                        placeholder="請輸入年利率" required>
+                    <div class="input-group-append">
+                        <span class="input-group-text">%</span>
+                    </div>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary btn-block">送出</button>
+            <div class="row">
+                <div class="col-md-4 offset-md-4">
+                    <h3 id="ans" class="p-3"></h3>
+                </div>
+            </div>
+        </form>
+        <p class="h5 text-center text-danger p-1">
+                本系統僅適用於利率不變之情況，計算結果僅供參考
+            </p>
+        <div class="fb-page d-flex justify-content-center" data-href="https://www.facebook.com/facebook" data-tabs="timeline" data-width="" data-height="70" data-small-header="false" data-adapt-container-width="false" data-hide-cover="false" data-show-facepile="false"><blockquote cite="https://www.facebook.com/facebook" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/facebook">Facebook</a></blockquote></div>
+    </div>
+    <div id="fb-root"></div>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/zh_TW/sdk.js#xfbml=1&version=v6.0"></script>
     <script src="./js/jquery-3.5.0.slim.min.js"></script>
     <script src="./js/popper.min.js"></script>
     <script src="./js/bootstrap.min.js"></script>
+    <script>
+        $('#contactForm').submit(function () {
+            SubmitClick();
+            return false;
+        });
+        function SubmitClick() {
+            var months = $('#years').val() * 12;
+            var cash = $('#cash').val();
+            var yearRate = $('#rate').val();
+            yearRate = yearRate * 0.01;
+            var monthRate = yearRate / 12;
+            var ageRate = (Math.pow(1 + monthRate, months) * monthRate) / (Math.pow(1 + monthRate, months) - 1);
+            var ans = (Math.round(cash / ageRate) / 10000).toFixed(0)
+            $('#ans').html("可貸款金額: " + ans + "萬元");
+            $().alert()
+        }
+    </script>
 </body>
+
 </html>
