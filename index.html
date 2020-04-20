@@ -5,12 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>ZAIN</title>
     <link rel="stylesheet" href="./css/bootstrap.min.css" />
     <style>
         .row {
             padding: 2px
         }
+
         footer {
             /* 設定footer的高度 */
             height: 60px;
@@ -27,60 +28,88 @@
 <body style="background-color: #a9a9a9">
     <nav class="navbar navbar-light bg-light">
         <a class="navbar-brand" href="#">
-            <img src="./icon/price.png" width="30" height="30"
-                class="d-inline-block align-top" alt="">
-                本息平均攤還法試算
+            <img src="./icon/Home.jpg" width="80" height="80" class="d-inline-block align-top" alt="">
+            本息平均攤還法試算
         </a>
     </nav>
-    <div class="container">
-        <div class="row">
-            <div class="col"></div>
-        </div>
+    <p class="h5 text-center text-danger p-1">
+        本系統僅適用於利率不變之情況，計算結果僅供參考
+    </p>
+    <div class="container p-3">
         <form id="contactForm">
-            <div class="form-group row">
-                <label for="years" class="col-md-3 col-form-label ">貸款年數</label>
-                <div class="input-group col-md-9 ">
-                    <input type="number" min="0" step="1" class="form-control shadow-lg" id="years"
-                        placeholder="請輸入您貸款的總年數" required>
-                    <div class="input-group-append">
-                        <span class="input-group-text">年</span>
-                    </div>
-                </div>
-            </div>
-            <div class="form-group row">
-                <label for="cash" class="col-md-3 col-form-label">每月應繳本息</label>
-                <div class="input-group col-md-9">
-                    <input type="number" min="0" step="1" class="form-control shadow-lg" id="cash"
-                        placeholder="請輸入您希望每月繳交的本息" required>
-                    <div class="input-group-append">
-                        <span class="input-group-text">元</span>
-                    </div>
-                </div>
-            </div>
-            <div class="form-group row">
-                <label for="rate" class="col-md-3 col-form-label">年利率</label>
-                <div class="input-group col-md-9">
-                    <input type="number" min="0" step="0.01" class="form-control shadow-lg" id="rate"
-                        placeholder="請輸入年利率" required>
-                    <div class="input-group-append">
-                        <span class="input-group-text">%</span>
-                    </div>
-                </div>
-            </div>
-            <button type="submit" class="btn btn-primary btn-block">送出</button>
             <div class="row">
-                <div class="col-md-4 offset-md-4">
-                    <h3 id="ans" class="p-3"></h3>
+                <div class="col-2 order-2 col-md-2 order-md-1">
+                    <img src="./icon/S__4644876.jpg" width="100%">
+                </div>
+                <div class="col-md-8 order-md-2 order-1">
+                    <div class="form-group row">
+                        <label for="years" class="col-md-3 col-form-label ">貸款年數</label>
+                        <div class="input-group col-md-9 ">
+                            <input type="number" min="0" step="1" class="form-control shadow-lg" id="years"
+                                placeholder="請輸入您貸款的總年數" required>
+                            <div class="input-group-append">
+                                <span class="input-group-text">年</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="cash" class="col-md-3 col-form-label">每月本息</label>
+                        <div class="input-group col-md-9">
+                            <input type="number" min="0" step="1" class="form-control shadow-lg" id="cash"
+                                placeholder="請輸入您希望每月繳交的本息" required>
+                            <div class="input-group-append">
+                                <span class="input-group-text">元</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="rate" class="col-md-3 col-form-label">年利率</label>
+                        <div class="input-group col-md-9">
+                            <input type="number" min="0" step="0.01" class="form-control shadow-lg" id="rate"
+                                placeholder="請輸入年利率" required>
+                            <div class="input-group-append">
+                                <span class="input-group-text">%</span>
+                            </div>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block">送出</button>
+                    <div class="row">
+                        <div class="col-md-4 offset-md-4">
+                            <h3 id="ans" class="p-3"></h3>
+                        </div>
+                    </div>
+                    <div class="offset-md-1 order-3 order-md-4 d-none d-md-block">
+                        <div class="fb-page d-flex justify-content-center"
+                            data-href="https://www.facebook.com/苗栗好事多-115035396812503/" data-tabs="timeline"
+                            data-width="" data-height="300" data-small-header="false" data-adapt-container-width="false"
+                            data-hide-cover="false" data-show-facepile="false">
+                            <blockquote cite="https://www.facebook.com/苗栗好事多-115035396812503/"
+                                class="fb-xfbml-parse-ignore"><a
+                                    href="https://www.facebook.com/苗栗好事多-115035396812503/">Facebook</a></blockquote>
+                        </div>
+                    </div>
+                </div>
+                <div class="offset-md-1 order-3 order-md-4 d-block d-sm-none d-sm-block d-md-none">
+                    <div class="fb-page d-flex justify-content-center"
+                        data-href="https://www.facebook.com/苗栗好事多-115035396812503/" data-tabs="timeline"
+                        data-width="" data-height="300" data-small-header="false" data-adapt-container-width="false"
+                        data-hide-cover="false" data-show-facepile="false">
+                        <blockquote cite="https://www.facebook.com/苗栗好事多-115035396812503/"
+                            class="fb-xfbml-parse-ignore"><a
+                                href="https://www.facebook.com/苗栗好事多-115035396812503/">Facebook</a></blockquote>
+                    </div>
+                </div>
+                <div class="col-2 order-3 col-md-2 order-md-3">
+                    <a href="https://lin.ee/hBYuIYT"><img src="./icon/S__4644874.jpg" width="100%" /></a>
                 </div>
             </div>
         </form>
-        <p class="h5 text-center text-danger p-1">
-                本系統僅適用於利率不變之情況，計算結果僅供參考
-            </p>
-        <div class="fb-page d-flex justify-content-center" data-href="https://www.facebook.com/facebook" data-tabs="timeline" data-width="" data-height="70" data-small-header="false" data-adapt-container-width="false" data-hide-cover="false" data-show-facepile="false"><blockquote cite="https://www.facebook.com/facebook" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/facebook">Facebook</a></blockquote></div>
+
+
     </div>
     <div id="fb-root"></div>
-    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/zh_TW/sdk.js#xfbml=1&version=v6.0"></script>
+    <script async defer crossorigin="anonymous"
+        src="https://connect.facebook.net/zh_TW/sdk.js#xfbml=1&version=v6.0"></script>
     <script src="./js/jquery-3.5.0.slim.min.js"></script>
     <script src="./js/popper.min.js"></script>
     <script src="./js/bootstrap.min.js"></script>
